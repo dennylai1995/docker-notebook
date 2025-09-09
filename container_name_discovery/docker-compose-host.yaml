@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  web_host:
+    image: busybox
+    tty: true # Allocates a pseudo-TTY to keep a container running.
+    network_mode: host
+    
+  db_host:
+    image: busybox
+    tty: true
+    network_mode: host

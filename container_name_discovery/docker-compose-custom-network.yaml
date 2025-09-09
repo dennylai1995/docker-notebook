@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  web_custom:
+    image: busybox
+    tty: true # Allocates a pseudo-TTY to keep a container running.
+    networks:
+    - my_test_bridge
+    
+  db_custom:
+    image: busybox
+    tty: true
+    ports:
+    - 5000:5001
+    networks:
+    - my_test_bridge
+    
+networks:
+  my_test_bridge:
+    driver: bridge
